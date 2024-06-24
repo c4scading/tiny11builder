@@ -231,10 +231,10 @@ Remove-Item -Path "$mainOSDrive\scratchdir\Windows\System32\OneDriveSetup.exe" -
 Write-Host "Removal complete!"
 Start-Sleep -Seconds 2
 Clear-Host
-Write-Host "Taking ownership of the WinSxS folder. This might take a while..."
-& 'takeown' '/f' "$mainOSDrive\scratchdir\Windows\WinSxS" '/r'
-& 'icacls' "$mainOSDrive\scratchdir\Windows\WinSxS" '/grant' "$($adminGroup.Value):(F)" '/T' '/C'
-Write-host "Complete!"
+# Write-Host "Taking ownership of the WinSxS folder. This might take a while..."
+# & 'takeown' '/f' "$mainOSDrive\scratchdir\Windows\WinSxS" '/r'
+# & 'icacls' "$mainOSDrive\scratchdir\Windows\WinSxS" '/grant' "$($adminGroup.Value):(F)" '/T' '/C'
+Write-host "Complete!"cd
 Start-Sleep -Seconds 2
 Clear-Host
 Write-Host "Preparing..."
@@ -336,10 +336,10 @@ foreach ($dir in $dirsToCopy) {
     }  
 
 
-Write-Host "Deleting WinSxS. This may take a while..."
-        Remove-Item -Path $mainOSDrive\scratchdir\Windows\WinSxS -Recurse -Force
+# Write-Host "Deleting WinSxS. This may take a while..."
+        # Remove-Item -Path $mainOSDrive\scratchdir\Windows\WinSxS -Recurse -Force
 
-Rename-Item -Path $mainOSDrive\scratchdir\Windows\WinSxS_edit -NewName $mainOSDrive\scratchdir\Windows\WinSxS
+# Rename-Item -Path $mainOSDrive\scratchdir\Windows\WinSxS_edit -NewName $mainOSDrive\scratchdir\Windows\WinSxS
 Write-Host "Complete!"
 
 Write-Host "Loading registry..."
